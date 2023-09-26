@@ -1,0 +1,39 @@
+<h1>{{ name }}</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd> {{ name }} </dd>
+
+  <td>Edad:</td>
+  <dd> {{ age }} </dd>
+
+  <td>Métodos:</td>
+  <dd> algún método </dd>
+
+  <td>Capitalizado:</td>
+  <dd> {{ getHeroDescription() }} </dd>
+
+</dl>
+
+<!-- mx-2: margen en el eje x de 2 -->
+<button
+*ngIf="name !== 'Spiderman'"
+(click) = "changeHero()"
+class="btn btn-primary mx-2">
+  Cambiar nombre
+</button>
+
+<!-- Cuando se le haga click al botón va a ejecutarse la función
+changeAge() -->
+<button
+*ngIf="age !== 25"
+(click) = "changeAge()"
+class="btn btn-primary mx-2">
+  Cambiar edad
+</button>
+
+<button
+(click)="resetForm()"
+class = "btn btn-primary mx-2">
+Reset
+</button>
