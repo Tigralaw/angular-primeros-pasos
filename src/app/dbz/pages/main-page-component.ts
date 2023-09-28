@@ -8,6 +8,20 @@ import { DBZService } from '../services/dbz.service';
 })
 export class MainPageComponent {
 
-  constructor( public dbzService: DBZService ){}
+  constructor( private dbzService: DBZService ){}
+
+  // getter
+  get characters(): Character[] {
+    // retorna una copia del objeto privado ts para tener acceso a él en el html
+    return [...this.dbzService.characters];
+  }
+
+  onDeleteCharacter( id: string ):void {
+    this.dbzService.deleteCharacterById( id );
+  }
+
+  onNewCharacter( character: Character ):void {
+    this.dbzService.addCharacter( character );
+  }
 
 }

@@ -25,7 +25,7 @@ export class DBZService {
     },
   ];
 
-  onNewCharacter( character: Character ): void {
+  addCharacter( character: Character ): void {
 
     // const newCharacter: Character = {
     //   id: uuid(),
@@ -37,17 +37,19 @@ export class DBZService {
     // los input y lo guarda en newCharacter
     // crea un objeto de tipo Character e inicializa los valores, genera el id con uuid() y lo combina
     // con character para formar un mismo objeto
-    const newCharacter: Character = { id: uuid(), ...character };
+    const newCharacter: Character = { ...character };
+    // Agrega un elemento al arreglo tipo Character con la información de newCharacter
     this.characters.push(newCharacter);
   }
 
-  // TODO: IMPLEMENTAR LA DIGUIENTE FUNCION
-  // deleteCharacterById( id:string ) {
-  //   this.characters = this.characters.filter( character => character.id !== id )
-  // }
-
-  onDeleteCharacter( index: number ):void {
-    this.characters.splice(index, 1);
+  // Elimina un elemento del objeto character haciendo un filtrado de los demás elementos y
+  // excluyendo al que tiene el id que recibe el método
+  deleteCharacterById( id:string ) {
+    this.characters = this.characters.filter( character => character.id !== id )
   }
+
+  // onDeleteCharacter( index: number ):void {
+  //   this.characters.splice(index, 1);
+  // }
 
 }
