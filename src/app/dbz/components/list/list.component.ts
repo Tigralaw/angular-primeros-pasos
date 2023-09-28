@@ -12,9 +12,9 @@ export class ListComponent {
   @Input()
   public characterList: Character[] = [
     {
-    id: uuid(),
-    name: 'Trunks',
-    power: 10
+    id: '',
+    name: '',
+    power: 0
   }
 ]
 
