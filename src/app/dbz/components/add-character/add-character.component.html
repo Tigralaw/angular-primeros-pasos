@@ -1,0 +1,22 @@
+<h4>Agregar personaje</h4>
+
+<form class="row" (ngSubmit)="emitCharacter()">
+  <!-- Los paréntesis indican que se trata de en evento
+    las llaves cuadradas son para asociar un atributo [()]
+    Too way data binding o caja de bananas es la estructura en la que
+    asocias un evento y un atributo al mismo tiempo. -->
+  <input
+    type="text"
+    [(ngModel)]="character.name"
+    name="name"
+    class="form-control mb-2"
+    placeholder="Nombre" />
+
+  <input type="text"
+  [(ngModel)]="character.power"
+  name="power"
+  class="form-control mb-2"
+  placeholder="Poder" />
+
+  <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
